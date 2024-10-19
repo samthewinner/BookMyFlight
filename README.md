@@ -30,7 +30,7 @@ A highly scalable flight booking management system built using microservices. Th
 
 ### 5. Seats Service
 - A **FastAPI** service responsible for handling real-time seat booking status.
-- Uses **Redis** for faster performance.
+- Uses **Redis** for storing seat details.
 
 ### 6. Flight Service
 - A microservice built using **FastAPI** that handles **CRUD operations** on flights.
@@ -44,9 +44,9 @@ A highly scalable flight booking management system built using microservices. Th
 - The extensiveness of this project introduced me to the fascinating world of **microservices** and **backend development** in general.
 - Learnt how **API gateways** and **service discovery servers** play a crucial role in any microservice architecture, and how services register themselves with the **service registry**.
 - Worked on various web frameworks like **Spring Boot**, **FastAPI**, and **Node.js**, juggling between the flexibility provided by **FastAPI** and the relatively stricter procedures offered by **Spring Boot**.
-- Learnt how different frameworks implement their own **MVC architecture**.
 - Gained knowledge about **distributed locks** and managing shared resources.
 - Learnt how to write **Dockerfiles** along with the basics of **Docker networking**.
+- Learnt how different frameworks implement their own **MVC architecture**.
 
 ---
 
