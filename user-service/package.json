@@ -1,0 +1,27 @@
+{
+    "name": "node-esm-app",
+    "version": "1.0.0",
+    "description": "A Node.js project using ES modules, Mongoose, UUID, dotenv, and Express",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+    },
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "dotenv": "^16.4.5",
+        "eureka-js-client": "^4.5.0",
+        "express": "^4.19.2",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.5.4",
+        "node-esm-app": "file:",
+        "uuid": "^10.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.4"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
