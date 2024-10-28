@@ -48,20 +48,9 @@ async def update_flight(flight: Flight, db: AsyncSession):
 
 async def delete_flight(flightId:int,db:AsyncSession):
 
-    # flightId = int(str(flightId).split('=')[1])
     data = db.execute(text(f"SELECT flightId FROM flightData as f WHERE f.flightId = {flightId}")).fetchone()
-    # print(data)
-    # # data = db.get(Flight,flightId)
     if not data:
-        raise HTTPException(status_code=404, detail="Flight not found")
-    # print(39)
-    # data = db.query(Flight).filter(Flight.flightId == flightId).first()
-    # print(flightId)
-    # query =  delete(Flight).where(Flight.flightId == flightId)
-    # data = db.execute(select(Flight).where(Flight.flightId == flightId))
-    # data = data.sc
-    # db.execute(query)
-    
+        raise HTTPException(status_code=404, detail="Flight not found")    
     db.execute(text(f"DELETE FROM flightData  WHERE flightData.flightId = {flightId}"))
     # db.delete(data)
     db.commit()
@@ -213,8 +202,7 @@ async def dataMigration():
             old_data = [list(i) for i in flights]
 
             return new_data,old_data
-            # return [engine.connect().execute(text(f"SELECT flightId FROM flightData as f WHERE f.departureDate = {formatted_date}")).fetchall(),
-            #         engine.connect().execute(text(f"SELECT flightId FROM flightData as f WHERE f.departureDate = {yesterday_formatted_date}")).fetchall()]
+           
         
         new_data,old_data = await get_sql_data()
         print("SQL_DATA: ",new_data," - " ,old_data)
