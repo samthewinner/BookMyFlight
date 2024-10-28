@@ -7,11 +7,8 @@ import { connectDB } from "./model/models.js";
 import { router as registerRoute } from "./routes/userRoutes.js";
 import { router as adminRouter } from "./routes/admin.js";
 
-
-// Connect to the database
 connectDB();
 
-// Initialize Express app
 const app = express();
 const port = 3000;
 
