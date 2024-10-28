@@ -237,6 +237,5 @@ async def dataMigration():
 async def deactivateLock():
     REDIS_HOST = REDIS_HOST = os.getenv('REDIS_HOST',"localhost")
     REDIS_PORT = 6379  
-    # REDIS_PASSWORD = 'your-redis-password'  
     client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=1,decode_responses=True)
     client.set('job-status',False)
