@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, "./.env") });
-// Get environment variables for Eureka configuration
+
 const eurekaHost = process.env.EUREKA_CLIENT_SERVICEURL_DEFAULTZONE || 'eureka-server';
 console.log(eurekaHost);
 
@@ -41,15 +41,14 @@ export function registerWithEureka(appName, PORT) {
         },
     });
 
-    // Start the Eureka client
+
     client.start((error) => {
         console.log(error || "user service registered");
     });
 
-    // Function to handle exit signals
     function exitHandler(options, exitCode) {
         if (options.cleanup) {
-            // Perform cleanup actions if needed
+
         }
         if (exitCode || exitCode === 0) {
             console.log(exitCode);
@@ -59,7 +58,6 @@ export function registerWithEureka(appName, PORT) {
         }
     }
 
-    // Attach exit handler on SIGINT signal
     process.on('SIGINT', () => exitHandler({ exit: true }));
 }
 
