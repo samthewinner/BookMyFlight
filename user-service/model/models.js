@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-// Define the User schema 
+
 const UserSchema = new mongoose.Schema({
   userid: { type: String, required: true, unique: true, default: uuidv4 },
   name: { type: String, required: true },
@@ -20,10 +20,9 @@ const UserSchema = new mongoose.Schema({
   flightHistory: { type: [String], required: false },
 });
 
-// Create the User model
+
 const User = mongoose.model('User', UserSchema);
 
-// MongoDB connection string (from environment variable)
 const uri = process.env.MONGO_URI || "";
 
 const AdminSchema = new mongoose.Schema({
@@ -35,7 +34,7 @@ const AdminSchema = new mongoose.Schema({
 
 const Admin = mongoose.model('Admin',AdminSchema)
 
-// Connect to MongoDB function
+
 const connectDB = async () => {
   try {
     await mongoose.connect(uri, {
@@ -47,5 +46,5 @@ const connectDB = async () => {
   }
 };
 
-// Export User model and connectDB function
+
 export { User, Admin , connectDB };
